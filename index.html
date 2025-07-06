@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Mortgage Calculator</title>
+    <link rel="icon" href="/assets/images/favicon-32x32.png" />
+  </head>
+  <body>
+    <main class="main-container">
+      <div class="container">
+        <header>
+          <h2>Mortgage Calculator</h2>
+          <button class="clear-all">Clear All</button>
+        </header>
+        <form id="mortgage-form">
+          <div class="input-group">
+            <label for="input-mortgage">Mortgage Amount</label>
+            <div class="input-wrapper">
+              <span class="unit-label left">£</span>
+              <input
+                type="number"
+                name="M-amount"
+                id="input-mortgage"
+                class="amount"
+                min="0"
+                required
+              />
+            </div>
+            <span aria-live="polite" class="error" id="error-amount"></span>
+          </div>
+          <div class="input-group2">
+            <div class="input-group">
+              <label for="input">Mortgage Term</label>
+              <div class="input-wrapper">
+                <input type="number" name="M-term" id="input" class="term" />
+                <span class="unit-label right">Years</span>
+              </div>
+              <span aria-live="polite" class="error" id="error-term"></span>
+            </div>
+            <div class="input-group">
+              <label for="rate">Interest Rate</label>
+              <div class="input-wrapper">
+                <input type="number" name="I-rate" id="rate" class="rate" />
+                <span class="unit-label right">%</span>
+              </div>
+              <span aria-live="polite" class="error" id="error-rate"></span>
+            </div>
+          </div>
+          <div class="mortgage-type">
+            <p>Mortgage Type</p>
+            <br />
+            <div class="radio-option">
+              <input
+                type="radio"
+                name="M-type"
+                id="repayment-type"
+                class="radio"
+                value="a"
+              />
+              <label for="repayment-type">Repayment</label>
+            </div>
+            <div class="radio-option">
+              <input
+                type="radio"
+                name="M-type"
+                id="interest-only"
+                class="radio"
+                value="b"
+              />
+              <label for="interest-only">Interest Only</label>
+            </div>
+            <span aria-live="polite" class="error" id="error-radio"></span>
+            <button type="submit" class="calculate-btn">
+              <img
+                src="/assets/images/icon-calculator.svg"
+                alt="calculator image"
+              />
+              <span class="text"> Calculate Repayments</span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="results">
+        <div class="results-empty">
+          <img src="/assets/images/illustration-empty.svg" alt="" />
+          <h2>Results shown here</h2>
+          <p>
+            Complete the form and click "Calculate repayments" to see what your
+            monthly repayments would be.
+          </p>
+        </div>
+        <div class="results-container-active">
+          <h2>Your results</h2>
+          <p>
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “Calculate
+            Repayments” again.
+          </p>
+          <div class="numbers-containers">
+            <p>Your monthly repayments</p>
+            <h1 class="mont-repayments"></h1>
+            <br />
+            <hr />
+            <p>Total you'll repay over the term</p>
+            <h3 class="total-repay"></h3>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="https://github.com/LeoSudario">Leosudario</a>.
+      </div>
+    </footer>
+    <script src="/script.jsx"></script>
+  </body>
+</html>
